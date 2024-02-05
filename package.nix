@@ -1,4 +1,4 @@
-{ stdenv, cmake, ninja, libclang, llvm }:
+{ stdenv, cmake, ninja, libclang, libllvm }:
 stdenv.mkDerivation {
   name = "babble";
 
@@ -6,7 +6,7 @@ stdenv.mkDerivation {
   # It's easier when subprojects have their own distinct subfolders.
   src = fetchGit {
     url = "https://github.com/expenses/babble";
-    rev = "03ddb618b2e86c58ff5e7567bdfbacd62231d620";
+    rev = "0e89dc6cdc89fc5f2b3a3ec6375b2a842ab287a5";
     ref = "nix-test";
     submodules = true;
   };
@@ -15,6 +15,6 @@ stdenv.mkDerivation {
   # at compile time) and normal build inputs (runnable on target
   # platform at run time) is important for cross compilation.
   nativeBuildInputs = [ cmake ninja ];
-  buildInputs = [ libclang llvm ];
+  buildInputs = [ libclang libllvm ];
 
 }
