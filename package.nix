@@ -6,7 +6,7 @@ stdenv.mkDerivation {
   # It's easier when subprojects have their own distinct subfolders.
   src = fetchGit {
     url = "https://github.com/expenses/babble";
-    rev = "2dd73a360480392d687dafd0bb39b36bc431d0bb";
+    rev = "a31b4c465f70dd073a22aee8621ebae69ca53e04";
     ref = "nix-test";
     submodules = true;
   };
