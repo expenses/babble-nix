@@ -6,13 +6,13 @@ stdenv.mkDerivation {
   # It's easier when subprojects have their own distinct subfolders.
   src = fetchGit {
     url = "https://github.com/expenses/babble";
-    rev = "22582358af6fbefd1b739948799d3d2b2bc4aead";
+    rev = "25c81be9f9af7b8c2b0fd24a06bc2570a0a01573";
     ref = "nix-test";
     submodules = true;
   };
 
   cmakeFlags = [
-    "-DLIBCLANG_DIR=${libclang.lib}"
+    "-DBBL_CLANG_INCLUDE_DIR=${libclang.lib}/lib/clang/16/include"
   ];
 
   # Distinguishing between native build inputs (runnable on the host
